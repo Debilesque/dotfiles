@@ -1,9 +1,9 @@
-#
-# .bashrc
-# ~/.bashrc: executed by bash(1) for non-login shells.
-
-echo "gato"
+echo "login shell"
 export PATH="$HOME/.local/bin:$PATH"
+export SSH_ASKPASS=""
+
+#setxkbmap latam -option 'caps:ctrl_modifier'
+#xcape -e '#66=Escape'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -74,26 +74,4 @@ alias l='ls -CF'
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# Default parameter to send to the "less" command
-# -R: show ANSI colors correctly; -i: case insensitive search
-LESS="-R -i"
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
-# Add sbin directories to PATH.  This is useful on systems that have sudo
-echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
-echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
-
-export PATH="$HOME/.cargo/bin:$PATH"
-export CDPATH="$HOME/itq/quinto/:$HOME/.wine/drive_c/$CDPATH"
-
-eval "$(starship init bash)"
+if [ -e /home/jellu/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jellu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

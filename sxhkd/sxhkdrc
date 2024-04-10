@@ -6,17 +6,17 @@ super + space
     bash ~/.config/rofi/launchers/launch.sh
 
 super + Return
-    kitty
+    wezterm start --class wezterm
 
 control + Tab
-    kitty
+    wezterm start --class wezterm
 
 #######################
 # Launch Applications #
 #######################
 
 super + {w, c, a, e, apostrophe}
-    {firefox, chromium-browser, pavucontrol, emacsclient -c -a 'emacs', thunar}
+    {firefox, chromium-browser, pavucontrol, emacsclient --create-frame, thunar}
 
 control + ntilde
     copyq show

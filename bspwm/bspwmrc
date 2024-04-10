@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 width=$(xrandr | grep '*' | awk '{print $1}')
     # TODO
@@ -20,7 +20,15 @@ bspc rule -a Zathura state=tiled \
     desktop='^1'
 bspc rule -a Emacs state=tiled
 bspc rule -a Eclipse state=tiled;
+bspc rule -a wezterm-emacs state=floating rectangle=650x650+358+59
+
+# echo "haha" > ~/first.txt
+# echo "$PATH" > path.txt
+# echo "$TERM" > term.txt
+# echo $(ps -p $$) >> term.txt
+# echo $(whoami) >> term.txt
+# autostart > ~/output.txt
+# echo "$?" > ~/hello.txt
 
 autostart
-
 pgrep bspswallow || bspswallow &
