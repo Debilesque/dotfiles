@@ -1,2 +1,6 @@
 #!/bin/sh
+<<<<<<< HEAD
 feh --no-fehbg --bg-fill '/home/jellu/pictures/wallpapers/griffth/color.png' 
+=======
+feh --no-fehbg --bg-fill '/home/jellu/pictures/wallpapers/griffith.png' 
+>>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc

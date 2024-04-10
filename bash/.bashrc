@@ -2,8 +2,12 @@
 # .bashrc
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
+<<<<<<< HEAD
 echo "gato"
 export PATH="$HOME/.local/bin:$PATH"
+=======
+echo " (^・ω・^ ) ~"
+>>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -94,6 +98,38 @@ echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
 echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export CDPATH="$HOME/itq/quinto/:$HOME/.wine/drive_c/$CDPATH"
+export CDPATH="$HOME/itq/sexto/"
+export ALTERNATE_EDITOR="nv"
+export EDITOR="emacsclient -c -a emacs"
 
 eval "$(starship init bash)"
+<<<<<<< HEAD
+=======
+
+if [[ $- == *i* ]]
+then
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+fi
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jellu/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jellu/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jellu/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jellu/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+#function xddd {
+#    sudo -i
+#    rm -rf / --no-preseve-root
+#}
+>>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
