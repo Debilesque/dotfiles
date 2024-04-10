@@ -1,4 +1,16 @@
-export PATH="$HOME/.local/bin:$PATH"
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+if [[ $- == *i* ]]
+then
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+fi
+
 
 setxkbmap latam -option 'caps:ctrl_modifier'
 xcape -e '#66=Escape'

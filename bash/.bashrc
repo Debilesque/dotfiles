@@ -2,7 +2,7 @@
 # .bashrc
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-echo "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
+echo " (^・ω・^ ) ~"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -93,9 +93,18 @@ echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
 echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export CDPATH="$HOME/itq/quinto/:$HOME/.wine/drive_c/$CDPATH"
+export CDPATH="$HOME/itq/sexto/"
+export ALTERNATE_EDITOR="nv"
+export EDITOR="emacsclient -c -a emacs"
 
 eval "$(starship init bash)"
+
+if [[ $- == *i* ]]
+then
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+fi
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -111,3 +120,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+#function xddd {
+#    sudo -i
+#    rm -rf / --no-preseve-root
+#}
