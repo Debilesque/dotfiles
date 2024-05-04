@@ -6,6 +6,10 @@
 
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
+  oracle-xe-url = pkgs.fetchurl {
+    url = "https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm";
+    sha256 = "f8357b432de33478549a76557e8c5220ec243710ed86115c65b0c2bc00a848db";
+  };
 in
 {
   imports = [
@@ -23,6 +27,26 @@ in
 
   networking.hostName = "vostro"; # Define your hostname.
   networking.networkmanager.enable = true;
+
+  # networking = {
+  #   bridges = {
+  #     "br01" = {
+  #       interfaces = ["wlp0s20f3"];
+  #     };
+  #   };
+  #   useDHCP = false;
+  #   interfaces = {
+  #     "br01".ipv4.addresses = [{
+  #       address = "192.168.100.20";
+  #       # no puede ser la ip de un dispositivo
+  #       prefixLength = 16;
+  #     }];
+  #   };
+  #   defaultGateway = "192.168.100.1";
+  #   # usé la de mi teléfono
+
+  #   nameservers = ["8.8.8.8"];
+  # };
 
   hardware.opengl = {
     enable = true;
@@ -64,8 +88,10 @@ in
 
   qt = {
     enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
+    # platformTheme = "gtk2";  # Set the platform theme
+    # style.name = "kvantum";  # Use Kvantum style
+    platformTheme = "qt5ct"; 
+    style = "kvantum";
   };
 
   fonts.packages = with pkgs; [
@@ -108,7 +134,7 @@ in
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
       enableCompletion = true;
-        ohMyZsh = {
+      ohMyZsh = {
         enable = true;
         plugins = [ "git"
                     "thefuck"
@@ -158,7 +184,7 @@ in
       nsxiv
 	    kitty
 	    redshift
-	    haskell.compiler.native-bignum.ghcHEAD
+	    haskell.compiler.ghc948
       pkgs.haskell-language-server
       cabal-install
 	    htop
@@ -267,6 +293,26 @@ in
       mcomix
       yt-dlp
       prismlauncher
+      pamixer
+      iproute2
+      bridge-utils
+      wirelesstools
+      libsForQt5.qtstyleplugin-kvantum
+      libsForQt5.qt5ct
+      gns3-server
+      gns3-gui
+      dynamips
+      vpcs
+      clang
+      clang-tools
+      libclang
+      libarchive
+      maltego
+      xournalpp
+      blender
+      brave
+      rsbkb
+      swiProlog
 	  ];
   };
 
@@ -276,7 +322,14 @@ in
   
   environment.systemPackages = with pkgs; [
     xcape
+    # oracle-xe
   ];
+
+
+  environment.variables = {
+    EDITOR = "emacsclient";
+    "QT_STYLE_OVERRIDE" = "kvantum";
+  };
 
   services = {
     # xcape.enable = true;
@@ -292,14 +345,18 @@ in
       enable = true;
       package = pkgs.emacs29;
     };
+    # oracle-xe = {
+    #   enable = true;
+    #   package = "/nix/store/i5c2a1kd3qrx9yim55z1s4n2237ks11x-oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm";
+    # };
   };
 
   virtualisation.libvirtd.enable = true;
   # virtualisation.vmware.host.enable = true;
-  # virtualisation.virtualbox.host = {
-  #   enable = true;
-  #   enableExtensionPack = true;
-  # };
+  virtualisation.virtualbox.host = {
+    enable = true;
+    #   enableExtensionPack = true;
+  };
 
   ## dconf.settings = {
   ##   "org/virt-manager/virt-manager/connections" = {
