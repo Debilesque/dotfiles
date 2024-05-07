@@ -2,12 +2,8 @@
 # .bashrc
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-<<<<<<< HEAD
-echo "gato"
 export PATH="$HOME/.local/bin:$PATH"
-=======
 echo " (^・ω・^ ) ~"
->>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -103,8 +99,6 @@ export ALTERNATE_EDITOR="nv"
 export EDITOR="emacsclient -c -a emacs"
 
 eval "$(starship init bash)"
-<<<<<<< HEAD
-=======
 
 if [[ $- == *i* ]]
 then
@@ -132,4 +126,3 @@ unset __conda_setup
 #    sudo -i
 #    rm -rf / --no-preseve-root
 #}
->>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc

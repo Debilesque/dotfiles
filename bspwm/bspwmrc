@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 #!/usr/bin/env bash
-=======
-#!/bin/sh
 
 set -e
->>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
 
 width=$(xrandr | grep '*' | awk '{print $1}')
     # TODO
@@ -25,26 +21,16 @@ bspc rule -a copyq state=floating \
 bspc rule -a Zathura state=tiled \
     desktop='^1'
 bspc rule -a Emacs state=tiled
-<<<<<<< HEAD
 bspc rule -a Eclipse state=tiled;
 bspc rule -a wezterm-emacs state=floating rectangle=650x650+358+59
 
-# echo "haha" > ~/first.txt
-# echo "$PATH" > path.txt
-# echo "$TERM" > term.txt
-# echo $(ps -p $$) >> term.txt
-# echo $(whoami) >> term.txt
-# autostart > ~/output.txt
-# echo "$?" > ~/hello.txt
-=======
-bspc rule -a Eclipse state=tiled
->>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
-
-echo $PATH > hello.txt
-autostart
-<<<<<<< HEAD
-=======
+echo "haha" > ~/first.txt
+echo "$PATH" > path.txt
+echo "$TERM" > term.txt
+echo $(ps -p $$) >> term.txt
+echo $(whoami) >> term.txt
+autostart > ~/output.txt
+echo "$?" > ~/hello.txt
 echo "bye" > bye.txt
 
->>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
 pgrep bspswallow || bspswallow &

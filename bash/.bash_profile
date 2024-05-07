@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 echo "login shell"
 export PATH="$HOME/.local/bin:$PATH"
-=======
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
@@ -14,8 +12,6 @@ then
     bind '"\e[A": history-search-backward'
     bind '"\e[B": history-search-forward'
 fi
-
->>>>>>> 1210ff1984c516db8ca4560c967fc995083242dc
 
 #setxkbmap latam -option 'caps:ctrl_modifier'
 #xcape -e '#66=Escape'
