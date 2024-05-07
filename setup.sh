@@ -22,12 +22,19 @@ ln -s $PWD/bash/.profile $HOME
 ln -s $PWD/Xmodmap/.* $HOME
 ln -s $PWD/xinit/.* $HOME
 ln -s $PWD/dirs/* $CONFIG
+
+mkdir -p $HOME/.local/share/applications
 ln -s $PWD/apps/* $HOME/.local/share/applications
 
 ln -s $PWD/stalonetray/.stalonetrayrc $HOME
 ln -s $PWD/starship/starship.toml $CONFIG
 
+sudo mkdir -p /etc/X11/xorg.conf.d/
 sudo ln -s $PWD/libinput/* /etc/X11/xorg.conf.d/
+
+sudo cp /etc/bashrc /etc/.old-bashrc
+sudo rm /etc/bashrc
+
 sudo ln -s $PWD/bash/etc/bashrc /etc/bashrc
 
 sudo ln -s ~/repos/dotfiles/nixos/configuration.nix /etc/nixos
