@@ -17,6 +17,7 @@ done
 
 ln -s $PWD/feh/.fehbg $HOME
 ln -s $PWD/bash/.bash* $HOME
+ln -s $PWD/zsh/.zsh* $HOME
 ln -s $PWD/bash/.profile $HOME
 ln -s $PWD/Xmodmap/.* $HOME
 ln -s $PWD/xinit/.* $HOME
@@ -29,7 +30,7 @@ ln -s $PWD/starship/starship.toml $CONFIG
 sudo ln -s $PWD/libinput/* /etc/X11/xorg.conf.d/
 sudo ln -s $PWD/bash/etc/bashrc /etc/bashrc
 
-sudo ln -s ~/repos/dotfiles/nixos/ /etc/
+sudo ln -s ~/repos/dotfiles/nixos/configuration.nix /etc/nixos
 
 mkdir ~/{desktop,downloads,templates,public,documents,music,pictures,videos}
 
