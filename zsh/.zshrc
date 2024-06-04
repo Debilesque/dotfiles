@@ -4,6 +4,10 @@ zstyle :compinstall filename '/home/jellu/.zshrc'
 
 alias kllx="killall xcape"
 alias ip="ip -c"
+alias ls="exa --icons=always"
+alias ll="ls -lh"
+alias cat="rich -ng --pager"
+alias grep="rg"
 
 autoload -Uz compinit
 compinit
