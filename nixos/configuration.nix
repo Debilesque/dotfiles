@@ -74,10 +74,14 @@ in
     xserver = {
       enable = true;
       layout = "latam";
-      xkbVariant = "";
+      xkbVariant = ",dvorak";
       xkbOptions = "caps:ctrl_modifier";
       windowManager.bspwm.enable = true;
-      displayManager.defaultSession = "none+bspwm";
+      displayManager.sddm = {
+        enable = true;
+        # wayland.enable = true;
+        # defaultSession = "none+bspwm";
+      };
       # displayManager.sddm.enable = true;
       videoDrivers = [ "intel" ];
     };
@@ -247,6 +251,7 @@ in
         sympy
         numpy
         pwntools
+        chardet
       ]))
       flameshot
       sioyek
@@ -313,6 +318,17 @@ in
       brave
       rsbkb
       swiProlog
+      losslesscut-bin
+      obs-studio
+      klavaro
+      xdg-desktop-portal
+      exiftool
+      xxd
+      arp-scan
+      nettools
+      eza
+      ripgrep
+      rich-cli
 	  ];
   };
 
