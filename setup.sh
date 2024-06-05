@@ -5,7 +5,7 @@ mkdir -v $CONFIG
 
 for i in bspwm git i3 kitty mpv redshift rofi \
     sxhkd gtk-3.0 lf xplr polybar qutebrowser \
-    ranger sioyek nyxt openbox; do
+    ranger sioyek nyxt openbox wezterm; do
     if [ -d "$i" ]; then
         ln -s $PWD/$i $CONFIG
     fi
