@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 let
@@ -19,44 +15,8 @@ in
 
   system.stateVersion = "23.11";
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "vostro"; # Define your hostname.
   networking.networkmanager.enable = true;
-
-  # networking = {
-  #   bridges = {
-  #     "br01" = {
-  #       interfaces = ["wlp0s20f3"];
-  #     };
-  #   };
-  #   useDHCP = false;
-  #   interfaces = {
-  #     "br01".ipv4.addresses = [{
-  #       address = "192.168.100.20";
-  #       # no puede ser la ip de un dispositivo
-  #       prefixLength = 16;
-  #     }];
-  #   };
-  #   defaultGateway = "192.168.100.1";
-  #   # usé la de mi teléfono
-
-  #   nameservers = ["8.8.8.8"];
-  # };
-
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiVdpau
-      libvdpau-va-gl
-      intel-compute-runtime
-    ];
-  };
 
   sound.enable = true;
   hardware.pulseaudio = {
@@ -79,11 +39,7 @@ in
       windowManager.bspwm.enable = true;
       displayManager.sddm = {
         enable = true;
-        # wayland.enable = true;
-        # defaultSession = "none+bspwm";
       };
-      # displayManager.sddm.enable = true;
-      videoDrivers = [ "intel" ];
     };
   };
 
@@ -115,11 +71,11 @@ in
   nixpkgs.config = {
     allowUnfree = true;
     pulseaudio = true;
-    packageOverrides = pkgs: {
-      vaapiIntel = pkgs.vaapiIntel.override {
-        enableHybridCodec = true;
-      };
-    };
+    # packageOverrides = pkgs: {
+    # vaapiIntel = pkgs.vaapiIntel.override {
+    # enableHybridCodec = true;
+    # };
+    # };
   };
 
   programs = {
@@ -202,47 +158,13 @@ in
 	    stalonetray
 	    xorg.xwininfo
 	    bc
-	    intel-gpu-tools
+	    # intel-gpu-tools
       qbittorrent
       drawio
       libreoffice
       mesa
-      intel-media-driver
+      # intel-media-driver
       gparted
-      (pkgs.texlive.combine {
-        inherit (pkgs.texlive)
-          scheme-basic
-          #amssymb
-          ulem
-          capt-of
-          metafont
-          latexmk
-          amsmath
-          amsfonts
-          #latexsym
-          cancel
-          hyperref
-          wrapfig
-          #graphicx
-          fancyhdr
-          float
-          #longtable
-          multirow booktabs
-          #multicol
-          caption
-          sidecap
-          adjustbox
-          parskip
-          enumitem
-          #tikz
-          lipsum
-          xcolor
-          cite
-          #square
-          #numbers
-          ragged2e
-          import
-          beamer; })
       (python311.withPackages(ps: with ps; [
         pygame
         pyright
@@ -300,12 +222,9 @@ in
       prismlauncher
       pamixer
       iproute2
-      bridge-utils
       wirelesstools
       libsForQt5.qtstyleplugin-kvantum
       libsForQt5.qt5ct
-      gns3-server
-      gns3-gui
       dynamips
       vpcs
       clang
@@ -329,6 +248,9 @@ in
       eza
       ripgrep
       rich-cli
+      radeontop
+      nvtop-amd
+      xdg-desktop-portal
 	  ];
   };
 
@@ -361,10 +283,6 @@ in
       enable = true;
       package = pkgs.emacs29;
     };
-    # oracle-xe = {
-    #   enable = true;
-    #   package = "/nix/store/i5c2a1kd3qrx9yim55z1s4n2237ks11x-oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm";
-    # };
   };
 
   virtualisation.libvirtd.enable = true;

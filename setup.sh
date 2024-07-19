@@ -11,10 +11,6 @@ for i in bspwm git i3 kitty mpv redshift rofi \
     fi
 done
 
-## since sioyek was installed via flatpak, its configuration
-## file need to be here
-## ln -s $PWD/sioyek $HOME/.var/app/com.github.ahrm.sioyek/config/sioyek/
-
 ln -s $PWD/feh/.fehbg $HOME
 ln -s $PWD/bash/.bash* $HOME
 ln -s $PWD/zsh/.zsh* $HOME

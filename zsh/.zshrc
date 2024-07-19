@@ -20,4 +20,5 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 export PATH="$HOME/.local/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
 eval "$(starship init zsh)"

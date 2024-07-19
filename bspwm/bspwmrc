@@ -34,3 +34,4 @@ echo "$?" > ~/hello.txt
 echo "bye" > bye.txt
 
 pgrep bspswallow || bspswallow &
+wezterm
