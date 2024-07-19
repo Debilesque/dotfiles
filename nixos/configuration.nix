@@ -11,6 +11,7 @@ in
   imports = [
     ./hardware-configuration.nix
     (import "${home-manager}/nixos")
+    ./desktop.nix
   ];
 
   system.stateVersion = "23.11";
