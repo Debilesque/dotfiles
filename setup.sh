@@ -33,7 +33,8 @@ sudo rm /etc/bashrc
 
 sudo ln -s $PWD/bash/etc/bashrc /etc/bashrc
 
-sudo ln -s ~/repos/dotfiles/nixos/configuration.nix /etc/nixos
+sudo ln -s ~/repos/dotfiles/nixos/configuration.nix /etc/nixos/configuration.nix
+sudo ln -s ~/repos/dotfiles/nixos/desktop.nix /etc/nixos/desktop.nix
 
 mkdir ~/{desktop,downloads,templates,public,documents,music,pictures,videos}
 
