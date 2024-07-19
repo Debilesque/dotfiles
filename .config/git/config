@@ -1,0 +1,8 @@
+[user]
+	name = Jellu
+	email = 105118442+Debilesque@users.noreply.github.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

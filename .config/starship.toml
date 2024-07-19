@@ -1,0 +1,21 @@
+# Get editor completions based on the config schema
+# "$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Time to run a command
+# command_timeout = 500
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+# disabled = true
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+
+# vimcmd_symbol = "[V](bold green)"
+# vimcmd_replace_one_symbol = "[X](bold purple)"
+# vimcmd_replace_symbol = "[R](bold purple)"
+# vimcmd_visual_symbol = "[V](bold yellow)"

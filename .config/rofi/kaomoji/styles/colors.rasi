@@ -1,0 +1,10 @@
+/*
+ * Change the colorscheme for every menu simply by editing this file...
+ *
+ *
+ * bluish    berry    nordic    nightly    gotham    mask    faded    cocoa
+ * black     white    jellu
+ *
+ */
+
+@import "jellu.rasi"

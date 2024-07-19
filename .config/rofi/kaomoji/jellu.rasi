@@ -1,0 +1,91 @@
+configuration {
+  font: "Iosevka Nerd Font 15"; 
+
+  display-drun: "run";
+  display-run: "exec";
+  display-window: "win";
+}
+
+@import "styles/colors.rasi"
+
+* {
+  background-color: @bg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 70%;
+  transparency: "real";
+}
+
+// Elemento de la lista
+
+element {
+  padding: 8 0;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.9;
+}
+
+element-icon {
+  size: 40;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview, mode-switcher];
+}
+
+// Lista de aplicaciones
+
+listview {
+  padding: 30 30;
+  background-color: @bg;
+  columns: 1;
+  lines: 8;
+}
+
+// Barra para escribir
+
+inputbar {
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12px;
+  text-color: @fg;
+}
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12px;
+  text-color: @fg;
+}
+
+// Botones del mode-switch
+
+button {
+  background-color: @fg-alt;
+  margin: 5px;
+  padding: 5px;
+  text-color: @bg;
+  border: 0px;
+}
+
+button selected{
+  text-color: @ac;
+}
