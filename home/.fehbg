@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/jellu/pictures/wallpapers/wallpaper.png' 
+/home/jellu/.nix-profile/bin/feh --no-fehbg --bg-fill '/home/jellu/pictures/wallpapers/femto-wall.png' 
