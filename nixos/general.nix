@@ -7,10 +7,6 @@ let
     };
 in
 {
-  # environment.etc."bashrc".text = ''
-  #   source /etc/bash-path.sh
-  # '';
-
   networking = {
     hostName = "pcgei";
     networkmanager.enable = true;
@@ -26,7 +22,6 @@ in
   powerManagement.enable = true;
 
   environment.systemPackages = with pkgs; [
-    neovim
     busybox
     home-manager
     xcape
@@ -134,15 +129,19 @@ in
     gvfs.enable = true;
     tumbler.enable = true;
 
+
+    displayManager.sddm = {
+      enable = true;
+    };
+
     xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = ",dvorak";
-      xkbOptions = "caps:ctrl_modifier";
-      windowManager.bspwm.enable = true;
-      displayManager.sddm = {
-        enable = true;
+      xkb = {
+        variant = ",dvorak";
+        options = "caps:ctrl_modifier;compose:ralt";
+        layout = "us";
       };
+      windowManager.bspwm.enable = true;
     };
 
     picom = {
